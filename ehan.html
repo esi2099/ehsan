@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>احسان علی پور - خدمات روباتیک</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+  body {
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+    direction: rtl;
+  }
+  header {
+    background: linear-gradient(90deg, #0052D4, #4364F7, #6FB1FC);
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease forwards;
+  }
+  header nav {
+    margin-top: 10px;
+  }
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  header nav a:hover {
+    color: #ffd700;
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  /* معرفی */
+  #intro {
+    background: white;
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  #intro h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #0052D4;
+  }
+  #intro p {
+    font-size: 1.15rem;
+    color: #555;
+  }
+
+  /* خدمات */
+  #services {
+    margin-top: 50px;
+  }
+  #services h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #0052D4;
+  }
+  .service-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  .card h3 {
+    margin-bottom: 15px;
+    color: #4364F7;
+  }
+  .card p {
+    color: #666;
+    line-height: 1.4;
+  }
+
+  /* درباره من */
+  #about {
+    margin-top: 60px;
+    background: white;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  }
+  #about h2 {
+    color: #0052D4;
+    margin-bottom: 20px;
+  }
+  #about p {
+    color: #444;
+    font-size: 1.1rem;
+  }
+
+  /* تماس */
+  #contact {
+    margin-top: 60px;
+    background: #0052D4;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  #contact h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  #contact form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  #contact input, #contact textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  #contact input::placeholder,
+  #contact textarea::placeholder {
+    color: #999;
+  }
+  #contact button {
+    background: #ffd700;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: #0052D4;
+  }
+  #contact button:hover {
+    background: #ffca00cc;
+  }
+
+  /* انیمیشن ها */
+  .fadeIn {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+  }
+  .fadeIn.delay-1 {
+    animation-delay: 0.3s;
+  }
+  .fadeIn.delay-2 {
+    animation-delay: 0.6s;
+  }
+  .fadeIn.delay-3 {
+    animation-delay: 0.9s;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    color: #999;
+    font-size: 0.9rem;
+    margin-top: 60px;
+  }
+
+  /* Responsive */
+  @media(max-width: 900px) {
+    .service-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>احسان علی پور</h1>
+  <nav>
+    <a href="#intro">خانه</a>
+    <a href="#services">خدمات</a>
+    <a href="#about">درباره من</a>
+    <a href="#contact">تماس</a>
+  </nav>
+</header>
+
+<section id="intro" class="fadeIn delay-1">
+  <h2>ارائه‌دهنده خدمات روباتیک حرفه‌ای</h2>
+  <p>سلام! من احسان علی پور هستم، متخصص طراحی و توسعه سیستم‌های روباتیک با تجربه در ارائه راهکارهای نوین و هوشمند.</p>
+</section>
+
+<section id="services" class="fadeIn delay-2">
+  <h2>خدمات ما</h2>
+  <div class="service-cards">
+    <div class="card">
+      <h3>طراحی ربات‌های صنعتی</h3>
+      <p>ساخت و برنامه‌نویسی ربات‌های پیشرفته صنعتی جهت افزایش بهره‌وری و کاهش خطا.</p>
+    </div>
+    <div class="card">
+      <h3>ربات‌های خودران</h3>
+      <p>توسعه ربات‌های خودران با الگوریتم‌های هوش مصنوعی و حسگرهای دقیق.</p>
+    </div>
+    <div class="card">
+      <h3>مشاوره تخصصی</h3>
+      <p>ارائه مشاوره فنی و آموزش‌های تخصصی برای توسعه پروژه‌های روباتیک.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="fadeIn delay-3">
+  <h2>درباره من</h2>
+  <p>با بیش از ۵ سال تجربه در حوزه روباتیک و مهندسی کنترل، مفتخرم که پروژه‌های موفقی در زمینه طراحی و پیاده‌سازی ربات‌های هوشمند را به انجام رسانده‌ام. هدف من ایجاد فناوری‌هایی است که زندگی روزمره را ساده‌تر و کارآمدتر کند.</p>
+</section>
+
+<section id="contact" class="fadeIn delay-3">
+  <h2>تماس با من</h2>
+  <form onsubmit="alert('پیام شما ارسال شد!'); return false;">
+    <input type="text" name="name" placeholder="نام شما" required />
+    <input type="email" name="email" placeholder="ایمیل شما" required />
+    <textarea name="message" placeholder="پیام شما" rows="5" required></textarea>
+    <button type="submit">ارسال پیام</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 احسان علی پور. همه حقوق محفوظ است.
+</footer>
+
+</body>
+</html>
